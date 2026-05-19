@@ -1,25 +1,27 @@
 :root {
-  --bg: #fbfbfc;
-  --fg: #0c0f14;
-  --muted: color-mix(in oklab, var(--fg) 55%, transparent);
-  --hairline: color-mix(in oklab, var(--fg) 14%, transparent);
-  --card: color-mix(in oklab, var(--fg) 4%, transparent);
-  --cardHover: color-mix(in oklab, var(--fg) 6%, transparent);
-  --shadow: 0 24px 80px color-mix(in oklab, var(--fg) 12%, transparent);
+  --bg: #f4f1e8;
+  --fg: #141311;
+  --muted: color-mix(in oklab, var(--fg) 58%, transparent);
+  --hairline: color-mix(in oklab, var(--fg) 16%, transparent);
+  --card: color-mix(in oklab, white 72%, transparent);
+  --cardHover: color-mix(in oklab, white 78%, transparent);
+  --shadow: 0 22px 60px color-mix(in oklab, black 10%, transparent);
+  --fieldBg: color-mix(in oklab, white 90%, transparent);
   --radius: 18px;
-  --focus: 0 0 0 4px color-mix(in oklab, var(--fg) 12%, transparent);
+  --focus: 0 0 0 4px color-mix(in oklab, var(--fg) 14%, transparent);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #07090c;
-    --fg: #f4f6fb;
+    --bg: #0c0b0a;
+    --fg: #f3f0e8;
     --muted: color-mix(in oklab, var(--fg) 52%, transparent);
     --hairline: color-mix(in oklab, var(--fg) 12%, transparent);
-    --card: color-mix(in oklab, var(--fg) 7%, transparent);
-    --cardHover: color-mix(in oklab, var(--fg) 10%, transparent);
-    --shadow: 0 24px 90px color-mix(in oklab, black 65%, transparent);
+    --card: color-mix(in oklab, var(--fg) 6%, transparent);
+    --cardHover: color-mix(in oklab, var(--fg) 9%, transparent);
+    --shadow: 0 24px 90px color-mix(in oklab, black 70%, transparent);
     --focus: 0 0 0 4px color-mix(in oklab, var(--fg) 14%, transparent);
+    --fieldBg: color-mix(in oklab, var(--fg) 7%, transparent);
   }
 }
 
@@ -37,19 +39,9 @@ body {
 body {
   margin: 0;
   color: var(--fg);
-  background: radial-gradient(
-      1200px 900px at 10% 10%,
-      color-mix(in oklab, var(--fg) 6%, transparent),
-      transparent 62%
-    ),
-    radial-gradient(
-      1000px 800px at 90% 0%,
-      color-mix(in oklab, var(--fg) 4%, transparent),
-      transparent 60%
-    ),
-    var(--bg);
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
-    Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+    "Apple Color Emoji", "Segoe UI Emoji";
   line-height: 1.35;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -60,7 +52,7 @@ body {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.07;
+  opacity: 0.02;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
 }
@@ -75,16 +67,16 @@ body {
 .login-card {
   display: grid;
   place-items: center;
-  gap: 16px;
-  padding: 30px 26px 24px;
-  border-radius: 28px;
+  gap: 14px;
+  padding: 30px 26px 22px;
+  border-radius: 22px;
   border: 1px solid var(--hairline);
-  background: linear-gradient(180deg, var(--card), transparent);
+  background: var(--card);
   box-shadow: var(--shadow);
   color: inherit;
   outline: none;
-  max-width: 520px;
-  width: min(520px, 100%);
+  max-width: 440px;
+  width: min(440px, 100%);
 }
 
 .pentagon {
@@ -93,7 +85,7 @@ body {
   display: grid;
   place-items: center;
   border-radius: 999px;
-  background: color-mix(in oklab, var(--fg) 4%, transparent);
+  background: color-mix(in oklab, var(--fg) 3%, transparent);
   border: 1px solid var(--hairline);
 }
 
@@ -106,13 +98,13 @@ body {
   stroke: color-mix(in oklab, var(--fg) 86%, transparent);
   stroke-width: 2.2;
   stroke-linejoin: round;
-  filter: drop-shadow(0 10px 22px color-mix(in oklab, var(--fg) 14%, transparent));
+  filter: drop-shadow(0 12px 26px color-mix(in oklab, black 14%, transparent));
 }
 
 .domain {
   margin: 0;
-  font-weight: 560;
-  letter-spacing: 0.18em;
+  font-weight: 650;
+  letter-spacing: 0.14em;
   text-transform: lowercase;
   font-size: clamp(22px, 4.5vw, 34px);
 }
@@ -132,15 +124,15 @@ body {
 .label {
   color: var(--muted);
   font-size: 12px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .input {
   width: 100%;
-  border-radius: 16px;
+  border-radius: 14px;
   border: 1px solid var(--hairline);
-  background: color-mix(in oklab, var(--fg) 3%, transparent);
+  background: var(--fieldBg);
   padding: 12px 14px;
   color: inherit;
   outline: none;
@@ -160,17 +152,13 @@ body {
 .button {
   margin-top: 4px;
   width: 100%;
-  border: 1px solid color-mix(in oklab, var(--fg) 18%, transparent);
-  background: linear-gradient(
-    180deg,
-    color-mix(in oklab, var(--fg) 92%, transparent),
-    color-mix(in oklab, var(--fg) 72%, transparent)
-  );
-  color: color-mix(in oklab, var(--bg) 96%, transparent);
-  border-radius: 16px;
+  border: 1px solid color-mix(in oklab, var(--fg) 22%, transparent);
+  background: var(--fg);
+  color: var(--bg);
+  border-radius: 14px;
   padding: 12px 14px;
   font-size: 13px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
   cursor: pointer;
   outline: none;
@@ -188,12 +176,11 @@ body {
   transition:
     background 180ms ease,
     border-color 180ms ease,
-    transform 180ms ease,
     box-shadow 180ms ease;
 }
 
 .login-card:hover {
-  background: linear-gradient(180deg, var(--cardHover), transparent);
+  background: var(--cardHover);
   border-color: color-mix(in oklab, var(--fg) 20%, transparent);
 }
 
