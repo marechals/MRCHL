@@ -12,5 +12,5 @@ If you use a custom domain, update `CNAME`.
 
 ## Error behavior
 
-This is a static site: the “login” is intentionally non-functional.
-Any attempt routes to a missing path so GitHub Pages serves `404.html`.
+This is a static site: the login form is intentionally non-functional.
+Any submit routes to a missing path so GitHub Pages serves `404.html`.
