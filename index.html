@@ -12,7 +12,7 @@
   <body>
     <div class="noise" aria-hidden="true"></div>
     <main class="login">
-      <a class="login-link" href="/session" aria-label="Sign in">
+      <form class="login-card" id="loginForm" autocomplete="off" novalidate>
         <span class="pentagon" aria-hidden="true">
           <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -22,7 +22,44 @@
           </svg>
         </span>
         <h1 class="domain">mrchl.com</h1>
-      </a>
+        <div class="fields" aria-label="Login">
+          <label class="field">
+            <span class="label">User</span>
+            <input
+              class="input"
+              name="user"
+              inputmode="email"
+              autocomplete="username"
+              placeholder="user@mrchl.com"
+              required
+            />
+          </label>
+          <label class="field">
+            <span class="label">Password</span>
+            <input
+              class="input"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              placeholder="••••••••"
+              required
+            />
+          </label>
+          <button class="button" type="submit">Login</button>
+        </div>
+      </form>
     </main>
+
+    <script>
+      const form = document.getElementById("loginForm");
+      if (form) {
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+          // Intentionally non-functional: redirect to a missing path
+          // so GitHub Pages serves `404.html` as an error response.
+          window.location.href = "/session";
+        });
+      }
+    </script>
   </body>
 </html>
