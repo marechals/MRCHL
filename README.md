@@ -1,10 +1,6 @@
 # mrchl.com
 
-Minimal landing page for **MRCHL** (GitHub Pages).
-
-## Edit links
-
-Update the `LINKS` array in `site.js`.
+Minimal login-style splash for **mrchl.com** (GitHub Pages).
 
 ## GitHub Pages
 
@@ -13,3 +9,8 @@ Update the `LINKS` array in `site.js`.
 3. Branch: `main` / Folder: `/ (root)`
 
 If you use a custom domain, update `CNAME`.
+
+## Error behavior
+
+This is a static site: the “login” is intentionally non-functional.
+Any attempt routes to a missing path so GitHub Pages serves `404.html`.
