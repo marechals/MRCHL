@@ -108,7 +108,7 @@ body {
 
 .pentagon-stroke {
   stroke: color-mix(in oklab, var(--fg) 86%, transparent);
-  stroke-width: 2.2;
+  stroke-width: 8.2;
   stroke-linejoin: round;
   filter: drop-shadow(0 12px 26px color-mix(in oklab, black 14%, transparent));
 }
